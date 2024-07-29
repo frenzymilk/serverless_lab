@@ -4,7 +4,7 @@ Create a website visit counter using Lambda, API Gateway and DynamoDB
 
 ### Create Policy
 
-- Edit a policy to enable your Lambda function to perform DynamoDB actions and CloudWatch logs actions.
+* Edit a policy to enable your Lambda function to perform DynamoDB actions and CloudWatch logs actions.
 ```
 {
   "Version": "2012-10-17",
@@ -47,10 +47,10 @@ Create a website visit counter using Lambda, API Gateway and DynamoDB
 
 ### Create a DynamoDB table
 
-* Name your table and use "id" as the key partition for your table
-![add_element](./images/table_creation.png)
 * Create the table
 ![add_element](./images/create_table.png)
+* Name your table and use "id" as the key partition for your table
+![add_element](./images/table_creation.png)
 * Add an element in the table, that will be your counter
 ![add_element](./images/explore_table.png)
 ![add_element](./images/add_element.png)
@@ -67,6 +67,7 @@ zip -r9 python_requests_layer.zip python
 ```
 * Upload the zip file to create a new layer and copy its arn
 ![add_element](./images/add_layer.png)
+![add_element](./images/specify_arn.png)
 * Create the function 
 	Add the uploaded layer to the function
 	![add_element](./images/create_function.png)
@@ -140,12 +141,16 @@ def lambda_handler(event, context):
 
 ### Create the API
 
+* Create an API
+![add_element](./images/api_next.png)
 * Choose the HTTP API
 ![add_element](./images/http_api.png)
 ![add_element](./images/create_api_http.png)
+![add_element](./images/steps.png)
 * The routes will be configured later
 * Choose the automated deployment and create the API
 * We can now create the routes for the GET and PUT methods
+![add_element](./images/configure_route.png)
 ![add_element](./images/create_route.png)
 ![add_element](./images/create_route_2.png)
 ![add_element](./images/create_route_3.png)
@@ -154,22 +159,18 @@ def lambda_handler(event, context):
 	![add_element](./images/integration.png)
 	- Pick your previous Lambda function as integration target
 	![add_element](./images/create_integration.png)
-	![add_element](./images/specify_arn.png)
 	- Repeat the process for all your routes by joining this newly created integration
 * Get the URL to invoke your API and test it using the curl command
-
-
-
-
-![add_element](./images/api_next.png)
-![add_element](./images/authorization_policy.png)
-![add_element](./images/configure_route.png)
-
-
-
 ![add_element](./images/gateway_url.png)
 
 
 
-![add_element](./images/steps.png)
+
+
+
+
+
+
+
+
 
