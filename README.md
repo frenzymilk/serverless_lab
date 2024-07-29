@@ -42,6 +42,7 @@ Create a website visit counter using Lambda, API Gateway and DynamoDB
 * Ensure the Lambda service is a trusted identity of this role
 ![add_element](./images/trusted_identity.png)
 * Attach the previously created policy to this role
+![add_policy](./images/authorization_policy.png)
 * Name and create the role
 
 
